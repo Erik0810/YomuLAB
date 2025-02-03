@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <!-- Intro Section -->
+    <input type="hidden" id="csrf_token" name="csrf_token" value="{{ csrf_token() }}">
+    <div class="row mb-5">
+        <div class="col-md-10 mx-auto text-center">
+            <h1 class="display-4 mb-4">Welcome to YomuLAB</h1>
+            <p class="lead">
+                <i class="fas fa-seedling me-2"></i>
+                YomuLAB is an interactive language learning app that adapts to your proficiency level. Practice real-world conversations, receive instant feedback, and improve your fluency through immersive, AI-powered dialogues.
+            </p>
+            <p class="lead">
+                Take the test below to determine your Japanese level and start your learning journey!
+            </p>
+        </div>
+    </div>
+
+    <!-- Proficiency Test -->
+    <div class="row">
+        <div class="col-md-10 mx-auto">
+            <div class="card shadow-sm bg-beige">
+                <div class="card-header bg-dark-green text-white">
+                    <h5 class="card-title mb-0"><i class="fas fa-question-circle me-2"></i>Proficiency Test</h5>
+                </div>
+                <div class="card-body">
+                    <!-- Question -->
+                    <div id="question" class="mb-4 text-center">
+                        <h3 id="question-text">What is the meaning of こんにちは?</h3>
+                    </div>
+
+                    <!-- Answer Options -->
+                    <div id="answers" class="row g-3">
+                        <div class="col-md-6">
+                            <button class="btn btn-answer w-100" data-correct="true">Hello</button>
+                        </div>
+                        <div class="col-md-6">
+                            <button class="btn btn-answer w-100" data-correct="false">Goodbye</button>
+                        </div>
+                        <div class="col-md-6">
+                            <button class="btn btn-answer w-100" data-correct="false">Thank you</button>
+                        </div>
+                        <div class="col-md-6">
+                            <button class="btn btn-answer w-100" data-correct="false">Sorry</button>
+                        </div>
+                    </div>
+
+                    <!-- Progress -->
+                    <div class="mt-4 text-center">
+                        <span id="progress">Question 1 of 10</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

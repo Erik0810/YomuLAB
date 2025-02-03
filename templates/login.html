@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <!-- Logo/Header Section -->
+            <div class="text-center mb-4">
+                <h1 class="display-5 text-dark-green">Welcome Back</h1>
+                <p class="text-muted">
+                    <i class="fas fa-seedling me-2"></i>
+                    Continue your language learning journey
+                </p>
+            </div>
+
+            <!-- Login Card -->
+            <div class="card shadow-sm bg-white">
+                <div class="card-body p-4">
+                    <form method="POST" action="{{ url_for('loginSys.login') }}">
+                        {{ form.hidden_tag() }}
+                        
+                        <!-- Username Field -->
+                        <div class="mb-3">
+                            <label for="{{ form.username.id }}" class="form-label">Username</label>
+                            {{ form.username(class="form-control", placeholder="Enter your username") }}
+                            {% if form.username.errors %}
+                                {% for error in form.username.errors %}
+                                    <div class="text-danger small">{{ error }}</div>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+
+                        <!-- Password Field -->
+                        <div class="mb-3">
+                            <label for="{{ form.password.id }}" class="form-label">Password</label>
+                            {{ form.password(class="form-control", placeholder="Enter your password") }}
+                            {% if form.password.errors %}
+                                {% for error in form.password.errors %}
+                                    <div class="text-danger small">{{ error }}</div>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+
+                        <!-- Remember Me & Forgot Password -->
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="remember">
+                                <label class="form-check-label" for="remember">Remember me</label>
+                            </div>
+                            <a href="#" class="text-dark-green text-decoration-none small">Forgot your password?</a>
+                        </div>
+
+                        <!-- Login Button -->
+                        {{ form.submit(class="btn btn-soft-green w-100 mb-3") }}
+
+                        <!-- Divider -->
+                        <div class="position-relative my-4">
+                            <hr class="my-0">
+                            <div class="position-absolute top-50 start-50 translate-middle px-3 bg-white">
+                                <span class="text-muted small">New to YomuLAB?</span>
+                            </div>
+                        </div>
+
+                        <!-- Register Button -->
+                        <a href="{{ url_for('loginSys.register') }}" class="btn w-100" style="background-color: var(--beige); color: var(--dark-green);">
+                            <i class="fas fa-user-plus me-2"></i>Create Account
+                        </a>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Flash Messages -->
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }} mt-3">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+    </div>
+</div>
+{% endblock %}

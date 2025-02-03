@@ -1,0 +1,167 @@
+/* Custom Colors */
+:root {
+    --off-white: #f8f4f0; /* Soft off-white */
+    --dark-green: #3a5a40; /* Muted dark green */
+    --soft-green: #a8d5ba; /* Soft green for accents */
+    --beige: #f4e9d8; /* Warm beige for chatbox */
+    --text-dark: #333; /* Dark gray for text */
+}
+
+/* General Styles */
+body {
+    margin: 0; 
+    font-family: 'Quicksand', sans-serif;
+    background-color: var(--off-white);
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h1, h2, h3 {
+    font-family: 'Roboto Slab', serif;
+    color: var(--dark-green);
+}
+
+/* Background Colors */
+.bg-dark-green {
+    background-color: var(--dark-green);
+}
+
+.bg-beige {
+    background-color: var(--beige);
+}
+
+/* Buttons */
+.btn-soft-green {
+    background-color: var(--soft-green);
+    border-color: var(--soft-green);
+    color: white;
+}
+
+.btn-soft-green:hover {
+    background-color: var(--dark-green);
+    border-color: var(--dark-green);
+}
+
+/* Cards */
+.card {
+    border: none;
+    border-radius: 10px;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--dark-green);
+    color: white;
+}
+
+/* Icons */
+.fas {
+    color: var(--dark-green);
+}
+
+/* Flexbox Utilities */
+.flex-grow-1 {
+    flex-grow: 1;
+}
+
+/* Proficiency Test Styles */
+.btn-answer {
+    background-color: var(--off-white);
+    border: 2px solid var(--dark-green);
+    color: var(--text-dark);
+    padding: 15px;
+    text-align: left;
+    font-size: 1.1rem; 
+    font-weight: bold; 
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-answer:hover {
+    background-color: var(--soft-green);
+    color: white;
+}
+
+.btn-answer.correct {
+    background-color: #28a745; 
+    border-color: #28a745; 
+    color: white;
+    cursor: not-allowed; 
+}
+
+.btn-answer.incorrect {
+    background-color: #dc3545; 
+    border-color: #dc3545; 
+    color: white;
+    cursor: not-allowed;
+}
+
+
+#question-text {
+    font-size: 1.5rem;
+    font-weight: bold; 
+}
+
+/* Wider test section */
+.card {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.btn-soft-green {
+    background-color: var(--dark-green);
+    color: white;
+}
+
+.btn-soft-green:hover {
+    background-color: var(--soft-green);
+    color: white;
+}
+
+.form-control:focus {
+    border-color: var(--soft-green);
+    box-shadow: 0 0 0 0.2rem rgba(168, 213, 186, 0.25);
+}
+
+.form-check-input:checked {
+    background-color: var(--dark-green);
+    border-color: var(--dark-green);
+}
+
+.text-dark-green {
+    color: var(--dark-green);
+}
+
+a:hover {
+    color: var(--soft-green) !important;
+}
+
+.dropdown-menu {
+    background-color: white;
+    border: none;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    border-radius: 0.5rem;
+}
+
+.dropdown-item {
+    padding: 0.5rem 1rem;
+    color: var(--text-dark);
+}
+
+.dropdown-item:hover {
+    background-color: var(--beige);
+}
+
+.dropdown-item.text-danger:hover {
+    background-color: #fff5f5;
+}
+
+.dropdown-divider {
+    margin: 0.5rem 0;
+    border-top: 1px solid var(--beige);
+}
+
+.nav-link .fa-user-circle {
+    font-size: 1.2rem;
+}

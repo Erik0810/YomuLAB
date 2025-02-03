@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Intro Section -->
+<div class="row mb-5">
+    <div class="col-md-8 mx-auto text-center">
+        <h1 class="display-4 mb-4">Welcome to YomuLAB</h1>
+        <p class="lead mb-4">
+            <i class="fas fa-seedling me-2"></i>
+            Start your Japanese learning journey with YomuLAB - your personal AI language learning companion.
+        </p>
+        <!-- Login/Register Call to Action -->
+        <div class="cta-buttons">
+            <a href="{{ url_for('loginSys.login') }}" class="btn btn-soft-green btn-lg me-3">
+                <i class="fas fa-sign-in-alt me-2 text-white"></i>Log In
+            </a>
+            <a href="{{ url_for('loginSys.register') }}" class="btn btn-outline-dark btn-lg">
+                <i class="fas fa-user-plus me-2"></i>Create Account
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Feature Boxes -->
+<div class="row g-4">
+    <!-- AI Chat Feature -->
+    <div class="col-md-4">
+        <div class="feature-card">
+            <div class="feature-icon">
+                <i class="fas fa-comments"></i>
+            </div>
+            <h3>AI Conversation Partner</h3>
+            <p>Practice natural Japanese conversations with our intelligent AI tutor. Get instant feedback and corrections to perfect your speaking skills and build confidence.</p>
+        </div>
+    </div>
+
+    <!-- Proficiency Assessment Feature -->
+    <div class="col-md-4">
+        <div class="feature-card">
+            <div class="feature-icon">
+                <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Smart Assessment</h3>
+            <p>Take our adaptive proficiency test to find your current level. Receive a personalized learning path designed to help you progress effectively and efficiently.</p>
+        </div>
+    </div>
+
+    <!-- Progress Tracking Feature -->
+    <div class="col-md-4">
+        <div class="feature-card">
+            <div class="feature-icon">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h3>Track Progress (coming)</h3>
+            <p>Monitor your learning journey with detailed insights and progress tracking. Set achievement goals and watch as your Japanese language skills grow day by day.</p>
+        </div>
+    </div>
+</div>
+
+<style>
+.cta-buttons {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.cta-buttons .btn {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+}
+
+.btn-soft-green {
+    background-color: var(--dark-green);
+    color: white !important;
+}
+
+.btn-soft-green:hover {
+    background-color: var(--soft-green);
+    color: white !important;
+}
+
+.feature-card {
+    background-color: var(--beige);
+    border-radius: 15px;
+    padding: 2rem;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.feature-icon {
+    background-color: var(--dark-green);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.feature-icon i {
+    font-size: 2.5rem;
+    color: white;
+}
+
+.feature-card h3 {
+    color: var(--dark-green);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.feature-card p {
+    color: var(--text-dark);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+    opacity: 0.9;
+    padding: 0 0.5rem;
+}
+
+/* Make features more compact on mobile */
+@media (max-width: 768px) {
+    .feature-card {
+        padding: 1.5rem;
+    }
+    
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .feature-icon i {
+        font-size: 1.8rem;
+    }
+    
+    .feature-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .cta-buttons .btn {
+        display: block;
+        margin: 1rem auto;
+        width: 100%;
+        max-width: 300px;
+    }
+}
+</style>
+{% endblock %}

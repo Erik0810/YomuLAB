@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <!-- Contact Header Section -->
+    <div class="row mb-5">
+        <div class="col-md-10 mx-auto text-center">
+            <h1 class="display-4 mb-4">Contact Us</h1>
+            <p class="lead">
+                <i class="fas fa-comments me-2"></i>
+                Have questions about YomuLAB? We're here to help you on your language learning journey!
+            </p>
+        </div>
+    </div>
+
+    <!-- Contact Information and Reasons Section -->
+    <div class="row">
+        <div class="col-lg-6 mb-4">
+            <div class="card shadow-sm bg-beige h-100">
+                <div class="card-header bg-dark-green text-white">
+                    <h5 class="card-title mb-0">
+                        <i class="fas fa-envelope me-2"></i>Get in Touch
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="contact-info">
+                        <div class="mb-4">
+                            <h6 class="fw-bold">
+                                <i class="fas fa-at me-2"></i>Email
+                            </h6>
+                            <p class="ms-4">erik.k.overby@gmail.com</p>
+                        </div>
+                        <div class="mb-4">
+                            <h6 class="fw-bold">
+                                <i class="fas fa-clock me-2"></i>Response Time
+                            </h6>
+                            <p class="ms-4">Within 24 hours on business days</p>
+                        </div>
+                        <div class="mb-4">
+                            <h6 class="fw-bold">
+                                <i class="fas fa-map-marker-alt me-2"></i>Location
+                            </h6>
+                            <p class="ms-4">Oslo, Norway</p>
+                        </div>
+                        <div class="social-links mt-4">
+                            <h6 class="fw-bold mb-3">
+                                <i class="fas fa-share-nodes me-2"></i>Connect With Us
+                            </h6>
+                            <div class="ms-4">
+                                <!-- <a href="#" class="btn btn-outline-dark me-2">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="btn btn-outline-dark me-2">
+                                    <i class="fab fa-linkedin"></i>
+                                </a> -->
+                                <a href="https://github.com/Erik0810" class="btn btn-outline-dark">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 mb-4">
+            <div class="card shadow-sm bg-beige h-100">
+                <div class="card-header bg-dark-green text-white">
+                    <h5 class="card-title mb-0">
+                        <i class="fas fa-question-circle me-2"></i>How We Can Help
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="help-topics">
+                        <div class="mb-4">
+                            <h6 class="fw-bold">
+                                <i class="fas fa-graduation-cap me-2"></i>Learning Support
+                            </h6>
+                            <p class="ms-4">Questions about your study plan, difficulty levels, or learning materials</p>
+                        </div>
+                        <div class="mb-4">
+                            <h6 class="fw-bold">
+                                <i class="fas fa-cogs me-2"></i>Technical Assistance
+                            </h6>
+                            <p class="ms-4">Help with account settings, app functionality, or technical issues</p>
+                        </div>
+                        <div class="mb-4">
+                            <h6 class="fw-bold">
+                                <i class="fas fa-handshake me-2"></i>Partnership Inquiries
+                            </h6>
+                            <p class="ms-4">Opportunities for collaboration or business partnerships</p>
+                        </div>
+                        <div class="mb-4">
+                            <h6 class="fw-bold">
+                                <i class="fas fa-lightbulb me-2"></i>Feedback & Suggestions
+                            </h6>
+                            <p class="ms-4">Share your ideas to help us improve YomuLAB</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Additional CSS -->
+    <style>
+        .contact-info a {
+            color: var(--dark-green);
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            color: var(--soft-green);
+        }
+        
+        .social-links .btn-outline-dark {
+            border-color: var(--dark-green);
+            color: var(--dark-green);
+        }
+        
+        .social-links .btn-outline-dark:hover {
+            background-color: var(--dark-green);
+            color: white;
+        }
+        
+        .help-topics i {
+            color: var(--dark-green);
+        }
+        
+        .card-header i {
+            color: white;
+        }
+    </style>
+{% endblock %}

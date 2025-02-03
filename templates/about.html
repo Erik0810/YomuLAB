@@ -1,0 +1,171 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <!-- About Header Section -->
+    <div class="row mb-5">
+        <div class="col-md-10 mx-auto text-center">
+            <h1 class="display-4 mb-4">About YomuLAB</h1>
+            <p class="lead">
+                <i class="fas fa-book-reader me-2"></i>
+                A simple tool to help with Japanese language learning
+            </p>
+        </div>
+    </div>
+
+    <!-- Main Content Sections -->
+    <div class="row">
+        <!-- Personal Section -->
+        <div class="col-lg-6 mb-4">
+            <div class="card shadow-sm bg-beige h-100">
+                <div class="card-header bg-dark-green text-white">
+                    <h5 class="card-title mb-0">
+                        <i class="fas fa-coffee me-2"></i>About Me
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="text-center mb-4">
+                        <div class="avatar-placeholder mb-3">
+                            <img src="{{ url_for('static', filename='profilepic.jpg') }}" alt="Profile Picture" class="img-fluid rounded-circle" />
+                        </div>
+                        <h4>Erik Øverby</h4>
+                        <p class="text-muted">Oslo, Norway</p>
+                    </div>
+                    <div class="creator-info">
+                        <p>
+                            <i class="fas fa-code me-2"></i>
+                            Hey! I'm Erik, a developer from Oslo. I built YomuLAB as a side project while learning Japanese. It started as a way to organize study materials and practice coding, and I figured others might find it useful too.
+                        </p>
+                        <div class="mt-4">
+                            <a href="https://github.com/Erik0810" class="btn btn-outline-dark me-2" target="_blank">
+                                <i class="fab fa-github me-2"></i>GitHub
+                            </a>
+                            <a href="https://www.linkedin.com/in/erik-%C3%B8verby-8ba81a327/" class="btn btn-outline-dark" target="_blank">
+                                <i class="fab fa-linkedin me-2"></i>LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Info Section -->
+        <div class="col-lg-6 mb-4">
+            <div class="card shadow-sm bg-beige h-100">
+                <div class="card-header bg-dark-green text-white">
+                    <h5 class="card-title mb-0">
+                        <i class="fas fa-lightbulb me-2"></i>What's YomuLAB?
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="vision-content">
+                        <div class="mb-4">
+                            <h6 class="fw-bold">
+                                <i class="fas fa-puzzle-piece me-2"></i>The Idea
+                            </h6>
+                            <p class="ms-4">A straightforward tool that helps you practice Japanese at your own pace. Nothing fancy - just practical exercises that adapt to how well you're doing.</p>
+                        </div>
+                        <div class="mb-4">
+                            <h6 class="fw-bold">
+                                <i class="fas fa-code-branch me-2"></i>Open Source
+                            </h6>
+                            <p class="ms-4">The code is open source, so feel free to check it out or contribute if you're into that sort of thing. Always happy to get feedback or suggestions for improvements.</p>
+                        </div>
+                        <div class="mb-4">
+                            <h6 class="fw-bold">
+                                <i class="fas fa-comments me-2"></i>Community
+                            </h6>
+                            <p class="ms-4">If you find bugs or have ideas for making it better, just let me know. I work on this in my spare time, so updates might not be super frequent, but I'll do my best to keep improving it.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Technology Stack Section -->
+    <div class="row mt-2">
+        <div class="col-12">
+            <div class="card shadow-sm bg-beige">
+                <div class="card-header bg-dark-green text-white">
+                    <h5 class="card-title mb-0">
+                        <i class="fas fa-tools me-2"></i>Built With
+                    </h5>
+                </div>
+                <div class="card-body d-flex align-items-center"> 
+                    <div class="row text-center w-100"> 
+                        <div class="col-md-3 col-6 mb-4">
+                            <div class="tech-item"> 
+                                <i class="fab fa-python fa-2x mb-2"></i>
+                                <h6 class="mb-0">Python</h6>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6 mb-4">
+                            <div class="tech-item">
+                                <i class="fab fa-js fa-2x mb-2"></i>
+                                <h6 class="mb-0">JavaScript</h6>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6 mb-4">
+                            <div class="tech-item">
+                                <i class="fab fa-bootstrap fa-2x mb-2"></i>
+                                <h6 class="mb-0">Bootstrap</h6>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6 mb-4">
+                            <div class="tech-item">
+                                <i class="fas fa-robot fa-2x mb-2"></i>
+                                <h6 class="mb-0">OpenAI</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .creator-info a {
+            color: var(--dark-green);
+            text-decoration: none;
+        }
+        
+        .creator-info a:hover {
+            color: var(--soft-green);
+        }
+        
+        .btn-outline-dark {
+            border-color: var(--dark-green);
+            color: var(--dark-green);
+        }
+        
+        .btn-outline-dark:hover {
+            background-color: var(--dark-green);
+            color: white;
+        }
+        
+        .vision-content i,
+        .card-body i {
+            color: var(--dark-green);
+        }
+        
+        .card-header i {
+            color: white;
+        }
+        
+        .avatar-placeholder {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .tech-item {
+            padding: 1rem 0;
+        }
+        
+        .card-body {
+            min-height: 160px;
+        }
+    </style>
+{% endblock %}
