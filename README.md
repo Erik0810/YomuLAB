@@ -4,6 +4,8 @@
 
 YomuLAB is an interactive web application designed to help language learners practice and improve their Japanese skills. Through adaptive AI-powered conversations and proficiency assessments, YomuLAB provides a personalized and immersive learning experience.
 
+Access: https://yomulab.onrender.com (Powered by render's free plan, instance may spin down when inactive so allow 1 min of loading time)
+
 ## 🚀 Features
 
 ### **Adaptive Proficiency Test**
