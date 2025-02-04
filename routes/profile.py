@@ -51,7 +51,7 @@ def upload_profile_picture():
         filename = secure_filename(file.filename)
         filename = f"{current_user.id}_{filename}"
         
-        file_path = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
+        file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'static', 'profile_pics', filename)
         file.save(file_path)
 
         current_user.profile_pic = filename
@@ -61,4 +61,15 @@ def upload_profile_picture():
         return redirect(url_for('profile.profilePage'))
     
     flash('Invalid file type or file size exceeded')
+    return redirect(url_for('profile.profilePage'))
+
+# Reset user level and send to test page
+@profile.route('/reset_level', methods=['POST'])
+@login_required
+def reset_level():
+    form = ProfileForm()
+    if form.validate():
+        current_user.user_level = 0
+        db.session.commit()
+        return redirect(url_for('main.test'))
     return redirect(url_for('profile.profilePage'))
