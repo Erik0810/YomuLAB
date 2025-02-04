@@ -14,7 +14,12 @@ def profilePage():
     form = ProfileForm()  # Create form instance for CSRF token
     return render_template('profile.html', user=current_user, form=form)
 
-#Profile pic section
+# Display user level as a string
+@profile.app_template_filter('level_string')
+def level_string(level):
+    return {1: 'Beginner', 2: 'Intermediate', 3: 'Advanced'}.get(level, 'Unknown')
+
+# Profile pic section
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 def allowed_file(filename):

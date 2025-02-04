@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, jsonify
-from flask_login import login_required
+from flask_login import current_user, login_required
 from openai import OpenAI
 import logging
 import os
@@ -28,10 +28,16 @@ def index():
 def send_message():
     user_input = request.json.get('message')
 
+    # Prepare users level as a string for the AI prompt
+    level = current_user.user_level
+    level_mapping = {1: "beginner", 2: "intermediate", 3: "advanced"}
+    level = level_mapping.get(current_user.user_level, "unknown")
+
+
     # System message to set the AI's behavior
     system_message = {
         "role": "system",
-        "content": """
+        "content": f"""
         You are a helpful and patient Japanese language tutor. Your goal is to assist users in learning Japanese by:
         1. Explaining grammar, vocabulary, and sentence structures clearly.
         2. Providing examples in Japanese with English translations.
@@ -39,7 +45,8 @@ def send_message():
         4. Avoiding off-topic conversations and staying focused on teaching Japanese.
         5. Using polite and encouraging language to motivate the learner.
         6. Respond with concise answers. Keep your responses brief and to the point. Max 400 characters.
-        7. Speak in english with examples etc being in japanese
+        7. Speak in English with examples etc being in Japanese.
+        8. You are currently teaching at the {level} level so word yourself as such.
         """
     }
 

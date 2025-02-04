@@ -79,9 +79,9 @@ function calculateFinalLevel() {
     
     // Combine percentage and difficulty for final level
     let finalLevel;
-    if (percentage >= 80 && avgDifficulty > 2) {
+    if (percentage >= 80 && avgDifficulty > 1.5) {  // Lower from 2 to 1.5
         finalLevel = 'advanced';
-    } else if (percentage >= 60 && avgDifficulty > 1.5) {
+    } else if (percentage >= 60 && avgDifficulty > 1) {  // Lower from 1.5 to 1
         finalLevel = 'intermediate';
     } else {
         finalLevel = 'beginner';

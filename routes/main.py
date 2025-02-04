@@ -24,7 +24,8 @@ def test():
 @main.route('/submit-quiz-results', methods=['POST'])
 def submit_quiz_results():
     results = request.json
-    
+    print("Received level:", results.get('level'))
+
     if current_user.is_authenticated:
         # Update user's level in the database
         current_user.user_level = {
