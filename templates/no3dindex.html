@@ -1,11 +1,6 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="spline-container">
-    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.59/build/spline-viewer.js"></script>
-    <spline-viewer url="https://prod.spline.design/GN0DLH8jYtR4nbDc/scene.splinecode"></spline-viewer>
-</div>
-
 <!-- Intro Section -->
 <div class="row mb-5">
     <div class="col-md-8 mx-auto text-center">
@@ -27,7 +22,7 @@
 </div>
 
 <!-- Feature Boxes -->
-<div class="row g-4 feature-section">
+<div class="row g-4">
     <!-- AI Chat Feature -->
     <div class="col-md-4">
         <div class="feature-card">
@@ -62,7 +57,6 @@
     </div>
 </div>
 
-
 <style>
 .cta-buttons {
     margin-top: 2rem;
@@ -84,22 +78,15 @@
     color: white !important;
 }
 
-.feature-section {
-    margin-top: 20vh;
-}
-
-
 .feature-card {
     background-color: var(--beige);
     border-radius: 15px;
-    padding: 1.5rem;
+    padding: 2rem;
     height: 100%;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    position: relative;
-    transform: translateZ(0);
 }
 
 .feature-card:hover {
@@ -137,23 +124,6 @@
     margin-bottom: 0;
     opacity: 0.9;
     padding: 0 0.5rem;
-}
-
-.spline-container {
-    position: absolute;
-    top: 3vh;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    clip-path: inset(30px 0px 60px 0);
-    pointer-events: auto; /* Add this line */
-}
-
-
-/* Ensure other content stays on top */
-.row {
-    position: relative;
-    
 }
 
 /* Make features more compact on mobile */
